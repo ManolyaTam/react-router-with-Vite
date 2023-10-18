@@ -6,6 +6,7 @@ import './index.css'
 import Contact from "./routes/contacts.jsx";
 import Root, { loader as rootLoader, action as rootAction } from './routes/root'
 import { loader as contactLoader } from './routes/contacts.jsx'
+import EditContact, { action as editAction } from './routes/edit.jsx';
 
 const router = createBrowserRouter([{
   path: '/',
@@ -17,7 +18,13 @@ const router = createBrowserRouter([{
     {
       path: "contacts/:contactId",
       element: <Contact />,
-      loader: contactLoader
+      loader: contactLoader,
+    },
+    {
+      path: "contacts/:contactId/edit",
+      element: <EditContact />,
+      loader: contactLoader,
+      action: editAction,
     }
   ]
 },

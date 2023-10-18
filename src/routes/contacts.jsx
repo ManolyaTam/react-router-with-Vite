@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export async function loader({ params }) {
   const contact = await getContact(params.contactId);
-  return { contact };
+  return contact;
 }
 
 export default function Contact() {
